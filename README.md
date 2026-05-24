@@ -23,6 +23,7 @@ This is an ongoing practice/demo project focused mainly on building responsive U
 # 📸 Current UI Overview
 
 ## Dashboard Screen
+![Image Alt](https://github.com/Mdyeasinkhan4/Habit_Tracker-App/blob/1f8aae02e58f8777849172ebe95f08470023ae9f/Habit_Tracker_Preview_image.png)
 
 Displays multiple habit cards including:
 
