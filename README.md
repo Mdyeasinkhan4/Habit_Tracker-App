@@ -1,17 +1,111 @@
-# habit_tracker
+Habit Tracker App 🧠📈
 
-A new Flutter project.
+A simple and modern Habit Tracker UI Demo App built with Flutter.
+This is an ongoing practice/demo project focused mainly on building responsive UI and exploring Flutter widgets, layouts, and theming.
 
-## Getting Started
+✨ Current Features
+📋 Habit Dashboard Screen
+➕ Floating Action Button for adding habits
+🎨 Light & Dark Theme Support
+📱 Responsive Layout
+Portrait → Single column
+Landscape → Two-column layout
+🔥 Habit streak display
+🧩 Reusable HabitCard widget
+🛣️ Navigation between screens
+📸 Current UI Overview
+Dashboard Screen
 
-This project is a starting point for a Flutter application.
+Displays multiple habit cards including:
 
-A few resources to get you started if this is your first Flutter project:
+Drinking Water
+Exercise
+Meditation
+Reading
+Sleep
+Running
+Coding
+Entertainment
+Newspaper Reading
+Fasting
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Each card contains:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Icon
+Habit title
+Progress/target subtitle
+Streak counter
+🏗️ Project Structure
+lib/
+│
+├── main.dart
+│
+└── screens/
+    ├── dashboard_screen.dart
+    └── add_habit_screen.dart
+🧠 Concepts Practiced
+
+This project currently focuses on:
+
+Stateless Widgets
+Custom Reusable Components
+Flutter Navigation
+Theme Customization
+Responsive UI Design
+OrientationBuilder
+MediaQuery
+Material 3 Styling
+🎨 Theme Support
+
+The app supports both:
+
+☀️ Light Mode
+🌙 Dark Mode
+
+Using:
+
+ThemeMode.system
+🚀 Getting Started
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/habit_tracker.git
+2️⃣ Navigate to Project Folder
+cd habit_tracker
+3️⃣ Install Dependencies
+flutter pub get
+4️⃣ Run the App
+flutter run
+📌 Current Status
+
+⚠️ This is an ongoing demo/practice project.
+
+Currently:
+
+UI is the main focus
+Data is static/mock data
+Add Habit screen is under development
+🔮 Planned Features
+✅ Add Habit Form
+✅ Local Database (Hive / SQLite)
+✅ Habit Completion Tracking
+✅ Notifications & Reminders
+✅ Progress Charts
+✅ State Management
+✅ Animations
+✅ Clean Architecture
+🛠️ Built With
+Flutter
+Dart
+Material 3 Design
+👨‍💻 Developer Note
+
+This project is being developed mainly for learning and practicing Flutter UI development and responsive design concepts.
+
+⭐ Future Improvements
+Better UI/UX
+Real backend/database integration
+Authentication
+Habit analytics
+Custom categories
+📄 License
+
+This project is open-source and free to use for learning purposes.
