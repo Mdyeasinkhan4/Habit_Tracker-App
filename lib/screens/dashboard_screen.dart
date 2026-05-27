@@ -6,6 +6,8 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     final List<Widget> habitCards = [
       HabitCard(
         icon: Icon(
@@ -35,10 +37,7 @@ class DashboardScreen extends StatelessWidget {
         streakCount: "2 days",
       ),
       HabitCard(
-        icon: Icon(
-          Icons.book,
-          color: const Color.fromARGB(255, 82, 0, 150),
-        ),
+        icon: Icon(Icons.book, color: const Color.fromARGB(255, 82, 0, 150)),
         title: "Reading",
         subtitle: "20 pages",
         streakCount: "4 days",
@@ -62,19 +61,13 @@ class DashboardScreen extends StatelessWidget {
         streakCount: "4 days",
       ),
       HabitCard(
-        icon: Icon(
-          Icons.code,
-          color: const Color.fromARGB(255, 82, 0, 150),
-        ),
+        icon: Icon(Icons.code, color: const Color.fromARGB(255, 82, 0, 150)),
         title: "Coding",
         subtitle: "30 minutes",
         streakCount: "4 days",
       ),
       HabitCard(
-        icon: Icon(
-          Icons.movie,
-          color: const Color.fromARGB(255, 82, 0, 150),
-        ),
+        icon: Icon(Icons.movie, color: const Color.fromARGB(255, 82, 0, 150)),
         title: "Entertainment",
         subtitle: "30 minutes",
         streakCount: "10 days",
@@ -93,8 +86,8 @@ class DashboardScreen extends StatelessWidget {
           Icons.fastfood,
           color: const Color.fromARGB(255, 82, 0, 150),
         ),
-        title: "Fasting",
-        subtitle: "60 minutes",
+        title: "Avoiding Junk Food",
+        subtitle: "No junk food",
         streakCount: "4 days",
       ),
     ];
@@ -103,9 +96,7 @@ class DashboardScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: AppBar(
-        title: Text('Habit Tracker'),
-      ),
+      appBar: AppBar(title: Text('Habit Tracker')),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //Navigator to Add Habit Screen
@@ -117,68 +108,50 @@ class DashboardScreen extends StatelessWidget {
         child: const Icon(Icons.add),
       ),
       body: SafeArea(
-  child: SingleChildScrollView(
-    padding: const EdgeInsets.all(8),
-    child: Column(
-      children: [
-        OrientationBuilder(
-          builder: (context, orientation) {
-            final isPortrait =
-                MediaQuery.orientationOf(context) ==
-                    Orientation.portrait;
+        child: isPortrait
+            ? PortraitLayout(habitCards: habitCards)
+            : LandscapeLayout(habitCards: habitCards),
+      ),
+    );
+  }
+}
 
-            if (isPortrait) {
-              return Column(
-                spacing: 16,
-                children: habitCards,
-              );
-            }
+class PortraitLayout extends StatelessWidget {
+  final List<Widget> habitCards;
+  const PortraitLayout({super.key, required this.habitCards});
+  @override
+  Widget build(context) {
+    return ListView.builder(
+      padding: const EdgeInsets.all(8),
+      itemCount: habitCards.length,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 8),
+          child: habitCards[index],
+        );
+      },
+    );
+  }
+}
 
-            return Column(
-              spacing: 16,
-              children: [
-                for (var i = 0; i < habitCards.length; i += 2)
-                  Row(
-                    spacing: 16,
-                    children: [
-                      Expanded(child: habitCards[i]),
-                      if (i + 1 < habitCards.length)
-                        Expanded(child: habitCards[i + 1])
-                      else
-                        const Spacer(),
-                    ],
-                  ),
-              ],
-            );
-          },
-        ),
-
-        // const SizedBox(height: 50),
-        // FilledButton(
-        //   onPressed: isLoading ? null : () {
-        //     Navigator.push(
-        //       context,
-        //       MaterialPageRoute(
-        //         builder: (context) => const AddHabitScreen(),
-        //       ),
-        //     );
-        //   },
-        //   style: FilledButton.styleFrom(
-        //     shape: RoundedRectangleBorder(
-        //       borderRadius: BorderRadius.circular(16),
-        //     ),
-        //     minimumSize: const Size(double.infinity, 50),
-        //   ),
-        //   child: isLoading ? SizedBox(
-        //     height: 24,
-        //     width: 24,
-        //     child: CircularProgressIndicator(color: Colors.white,),
-        //   ) : const Text("Add Habit"),
-        // ),
-      ],
-    ),
-  ),
-),
+class LandscapeLayout extends StatelessWidget {
+  final List<Widget> habitCards;
+  const LandscapeLayout({super.key, required this.habitCards});
+  @override
+  Widget build(context) {
+    final cardWidth = (MediaQuery.of(context).size.width - 16) / 2;
+    return GridView.builder(
+      padding: const EdgeInsets.all(8),
+      itemCount: habitCards.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: cardWidth / 100,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+      ),
+      itemBuilder: (context, index) {
+        return habitCards[index];
+      },
     );
   }
 }
@@ -232,10 +205,7 @@ class HabitCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        title,
-                        style: TextStyle(color: color.onSurface),
-                      ),
+                      Text(title, style: TextStyle(color: color.onSurface)),
                       const SizedBox(height: 4),
                       Text(
                         subtitle,
@@ -265,10 +235,7 @@ class HabitCard extends StatelessWidget {
               const SizedBox(height: 2),
               Text(
                 "Streak",
-                style: TextStyle(
-                  fontSize: 10,
-                  color: color.onSurfaceVariant,
-                ),
+                style: TextStyle(fontSize: 10, color: color.onSurfaceVariant),
               ),
             ],
           ),
