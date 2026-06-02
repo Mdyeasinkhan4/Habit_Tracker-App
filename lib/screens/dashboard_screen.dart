@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:habit_tracker/screens/add_habit_screen.dart';
-import 'package:habit_tracker/screens/habit_details_screen.dart';
+import 'package:go_router/go_router.dart';
+import 'package:habit_tracker/router.dart';
 import 'package:habit_tracker/widgets/habit_card.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -94,19 +94,11 @@ class DashboardScreen extends StatelessWidget {
       ),
     ];
 
-    // bool isLoading = true;
-
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: Text('Habit Tracker')),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          //Navigator to Add Habit Screen
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddHabitScreen()),
-          );
-        },
+        onPressed: () => context.push(Routes.addHabit),
         child: const Icon(Icons.add),
       ),
       body: SafeArea(
@@ -127,18 +119,10 @@ class PortraitLayout extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       itemCount: habitCards.length,
       itemBuilder: (context, index) {
-        // Using gesture detector
         return GestureDetector(
-          onTap: () {
-            // Navigate to Habit Details Screen
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const HabitDetailsScreen()),
-            );
-          },
-          //Using Dismissible
+          onTap: () => context.push(Routes.habitDetails),
           child: Dismissible(
-            onDismissed: (direction){
+            onDismissed: (direction) {
               debugPrint('Habit dismissed $direction');
             },
             key: Key(habitCards[index].toString()),

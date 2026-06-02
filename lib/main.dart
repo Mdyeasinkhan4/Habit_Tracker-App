@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habit_tracker/screens/dashboard_screen.dart';
+import 'package:habit_tracker/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       title: 'Habit Tracker App',
       themeMode: ThemeMode.system,
@@ -32,18 +33,17 @@ class MyApp extends StatelessWidget {
         ),
       ),
       darkTheme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(
-              seedColor: Colors.grey,
-              brightness: Brightness.dark,
-            ).copyWith(
-              surface: Colors.black,
-              surfaceContainerHigh: const Color.fromARGB(255, 30, 30, 30),
-              primary: Colors.white,
-              primaryContainer: const Color.fromARGB(255, 50, 50, 50),
-              onSurface: Colors.white,
-              onSurfaceVariant: Colors.grey,
-            ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.grey,
+          brightness: Brightness.dark,
+        ).copyWith(
+          surface: Colors.black,
+          surfaceContainerHigh: const Color.fromARGB(255, 30, 30, 30),
+          primary: Colors.white,
+          primaryContainer: const Color.fromARGB(255, 50, 50, 50),
+          onSurface: Colors.white,
+          onSurfaceVariant: Colors.grey,
+        ),
         appBarTheme: const AppBarTheme(
           elevation: 1,
           centerTitle: true,
@@ -56,7 +56,6 @@ class MyApp extends StatelessWidget {
           shape: CircleBorder(),
         ),
       ),
-      home: const DashboardScreen(),
     );
   }
 }
