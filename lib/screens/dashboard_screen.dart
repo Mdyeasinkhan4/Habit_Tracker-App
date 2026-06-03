@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:habit_tracker/router.dart';
 import 'package:habit_tracker/widgets/habit_card.dart';
+import 'package:habit_tracker/widgets/nav_bar.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});

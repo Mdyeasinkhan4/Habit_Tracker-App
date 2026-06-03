@@ -82,9 +82,34 @@ class _AddHabitScreenState extends State<AddHabitScreen> {
                 if(!_formKey.currentState!.validate()){
                   return;
                 }
-                debugPrint("Habit Name: ${_habitNameController.text}");
-                debugPrint("Description: ${_descriptionController.text}");
+                // Show a snackbar
+                // ScaffoldMessenger.of(context).showSnackBar(
+                //   SnackBar(
+                //     content: Text("Habit Added"),
+                //     duration: Duration(seconds: 2),
+                //     action: SnackBarAction(label: "Done",textColor: Colors.white, onPressed: () => {
+                //       ScaffoldMessenger.of(context).hideCurrentSnackBar(),
+                //     }),
+                //   ),
+                //);
+
+                // Show a dialog instead
+                showDialog(context: context, builder: (context) {
+                  return AlertDialog(
+                    title: Text("Habit Added"),
+                    content: Text("Your habit has been added successfully."),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text("OK"),
+                      ),
+                    ],
+                  );
+                });
               },
+
               style: ButtonStyle(
                 minimumSize: WidgetStateProperty.all(Size.fromHeight(50)),
                 shape: WidgetStateProperty.all(RoundedRectangleBorder(

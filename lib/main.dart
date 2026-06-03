@@ -31,6 +31,14 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 102, 0, 150),
           shape: CircleBorder(),
         ),
+        textTheme: TextTheme(bodyMedium: TextStyle(color: Colors.black)),
+        snackBarTheme: SnackBarThemeData(
+          behavior: SnackBarBehavior.floating,
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+        ),
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
