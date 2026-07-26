@@ -17,18 +17,18 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 82, 0, 150),
+          seedColor: const Color.fromARGB(255, 247, 190, 6),
           brightness: Brightness.light,
         ),
         appBarTheme: const AppBarTheme(
           elevation: 1,
           centerTitle: true,
-          backgroundColor: Color.fromARGB(255, 107, 0, 150),
+          backgroundColor: const Color.fromARGB(255, 247, 190, 6),
           foregroundColor: Colors.white,
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           foregroundColor: Colors.white,
-          backgroundColor: Color.fromARGB(255, 102, 0, 150),
+          backgroundColor: Color.fromARGB(255, 230, 158, 3),
           shape: CircleBorder(),
         ),
         textTheme: TextTheme(bodyMedium: TextStyle(color: Colors.black)),

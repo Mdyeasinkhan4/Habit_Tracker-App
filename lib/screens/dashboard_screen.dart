@@ -15,7 +15,7 @@ class DashboardScreen extends StatelessWidget {
       HabitCard(
         icon: Icon(
           Icons.local_drink,
-          color: const Color.fromARGB(255, 82, 0, 150),
+          color: const Color.fromARGB(255, 0, 0, 0),
         ),
         title: "Drinking Water",
         subtitle: "1/3 glasses (2 Liters)",
@@ -24,7 +24,7 @@ class DashboardScreen extends StatelessWidget {
       HabitCard(
         icon: Icon(
           Icons.fitness_center,
-          color: const Color.fromARGB(255, 82, 0, 150),
+          color: const Color.fromARGB(255, 0, 0, 0),
         ),
         title: "Exercise",
         subtitle: "30 minutes",
@@ -33,14 +33,14 @@ class DashboardScreen extends StatelessWidget {
       HabitCard(
         icon: Icon(
           Icons.self_improvement,
-          color: const Color.fromARGB(255, 82, 0, 150),
+          color: const Color.fromARGB(255, 0, 0, 0),
         ),
         title: "Meditation",
         subtitle: "10 minutes",
         streakCount: "2 days",
       ),
       HabitCard(
-        icon: Icon(Icons.book, color: const Color.fromARGB(255, 82, 0, 150)),
+        icon: Icon(Icons.book, color: const Color.fromARGB(255, 0, 0, 0)),
         title: "Reading",
         subtitle: "20 pages",
         streakCount: "4 days",
@@ -48,7 +48,7 @@ class DashboardScreen extends StatelessWidget {
       HabitCard(
         icon: Icon(
           Icons.nightlight_round,
-          color: const Color.fromARGB(255, 82, 0, 150),
+          color: const Color.fromARGB(255, 0, 0, 0),
         ),
         title: "Sleep",
         subtitle: "8 hours",
@@ -57,20 +57,20 @@ class DashboardScreen extends StatelessWidget {
       HabitCard(
         icon: Icon(
           Icons.run_circle,
-          color: const Color.fromARGB(255, 82, 0, 150),
+          color: const Color.fromARGB(255, 0, 0, 0),
         ),
         title: "Running",
         subtitle: "30 minutes",
         streakCount: "4 days",
       ),
       HabitCard(
-        icon: Icon(Icons.code, color: const Color.fromARGB(255, 82, 0, 150)),
+        icon: Icon(Icons.code, color: const Color.fromARGB(255, 0, 0, 0)),
         title: "Coding",
         subtitle: "30 minutes",
         streakCount: "4 days",
       ),
       HabitCard(
-        icon: Icon(Icons.movie, color: const Color.fromARGB(255, 82, 0, 150)),
+        icon: Icon(Icons.movie, color: const Color.fromARGB(255, 0, 0, 0)),
         title: "Entertainment",
         subtitle: "30 minutes",
         streakCount: "10 days",
@@ -78,7 +78,7 @@ class DashboardScreen extends StatelessWidget {
       HabitCard(
         icon: Icon(
           Icons.newspaper,
-          color: const Color.fromARGB(255, 82, 0, 150),
+          color: const Color.fromARGB(255, 0, 0, 0),
         ),
         title: "Reading Newspaper",
         subtitle: "10 minutes",
@@ -87,7 +87,7 @@ class DashboardScreen extends StatelessWidget {
       HabitCard(
         icon: Icon(
           Icons.fastfood,
-          color: const Color.fromARGB(255, 82, 0, 150),
+          color: const Color.fromARGB(255, 0, 0, 0),
         ),
         title: "Avoiding Junk Food",
         subtitle: "No junk food",
